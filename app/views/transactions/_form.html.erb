@@ -1,0 +1,20 @@
+<%= simple_form_for @transaction, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :title %>
+  <%#= error_span(@transaction[:title]) %>
+  <%= f.input :description %>
+  <%#= error_span(@transaction[:description]) %>
+  <%= f.input :category %>
+  <%#= error_span(@transaction[:category]) %>
+  <%= f.input :customer_id %>
+  <%#= error_span(@transaction[:customer_id]) %>
+  <%= f.input :product_id %>
+  <%#= error_span(@transaction[:product_id]) %>
+  <%= f.input :total_price %>
+  <%#= error_span(@transaction[:total_price]) %>
+  <%= f.input :price %>
+  <%#= error_span(@transaction[:price]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                transactions_path, :class => 'btn btn-default' %>
+<% end %>

@@ -1,0 +1,30 @@
+<%= simple_form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%#= error_span(@customer[:name]) %>
+  <%= f.input :cpf %>
+  <%#= error_span(@customer[:cpf]) %>
+  <%= f.input :gender %>
+  <%#= error_span(@customer[:gender]) %>
+  <%= f.input :birthdate %>
+  <%#= error_span(@customer[:birthdate]) %>
+  <%= f.input :phone1 %>
+  <%#= error_span(@customer[:phone1]) %>
+  <%= f.input :phone2 %>
+  <%#= error_span(@customer[:phone2]) %>
+  <%= f.input :street %>
+  <%#= error_span(@customer[:street]) %>
+  <%= f.input :number %>
+  <%#= error_span(@customer[:number]) %>
+  <%= f.input :neighborhood %>
+  <%#= error_span(@customer[:neighborhood]) %>
+  <%= f.input :city %>
+  <%#= error_span(@customer[:city]) %>
+  <%= f.input :state %>
+  <%#= error_span(@customer[:state]) %>
+  <%= f.input :zip_code %>
+  <%#= error_span(@customer[:zip_code]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                customers_path, :class => 'btn btn-default' %>
+<% end %>
