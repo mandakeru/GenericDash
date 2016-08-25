@@ -1,30 +1,106 @@
-<%= simple_form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name %>
-  <%#= error_span(@customer[:name]) %>
-  <%= f.input :cpf %>
-  <%#= error_span(@customer[:cpf]) %>
-  <%= f.input :gender %>
-  <%#= error_span(@customer[:gender]) %>
-  <%= f.input :birthdate %>
-  <%#= error_span(@customer[:birthdate]) %>
-  <%= f.input :phone1 %>
-  <%#= error_span(@customer[:phone1]) %>
-  <%= f.input :phone2 %>
-  <%#= error_span(@customer[:phone2]) %>
-  <%= f.input :street %>
-  <%#= error_span(@customer[:street]) %>
-  <%= f.input :number %>
-  <%#= error_span(@customer[:number]) %>
-  <%= f.input :neighborhood %>
-  <%#= error_span(@customer[:neighborhood]) %>
-  <%= f.input :city %>
-  <%#= error_span(@customer[:city]) %>
-  <%= f.input :state %>
-  <%#= error_span(@customer[:state]) %>
-  <%= f.input :zip_code %>
-  <%#= error_span(@customer[:zip_code]) %>
-
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+<%= simple_form_for @customer do |f| %>
+<div class="row">
+  <div class="col-md-10">
+    <div class="box box-warning">
+      <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de Clientes</h3>
+      </div>
+      
+      <form role='form'>
+        
+        <div class="box-body">
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Nome</label>
+            <%= f.input :name, placeholder: 'Insira o nome', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">CPF</label>
+            <%= f.input :cpf, placeholder: '999.999.999-99', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Sexo</label>
+            <%= f.input :gender,  label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Data de nascimento</label>
+            <%= f.input :birthdate, as: :date, start_year: Date.today.year - 16,
+            end_year: Date.today.year, order: [:day, :month, :year], label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Telefone</label>
+            <%= f.input :phone1, placeholder: '99 9999-999', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Celular</label>
+            <%= f.input :phone2, placeholder: '99 9999-999', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Cep</label>
+            <%= f.input :zip_code, placeholder: '99999-999', label: false, class: 'form-control', input_html: {  id: 'cep' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Rua</label>
+            <%= f.input :street, placeholder: '...', label: false, disabled: true, class: 'form-control', input_html: {  id: 'rua' } %>
+          </div>
+          
+            <div class="form-group col-sm-4">
+            <label for="title">Número</label>
+            <%= f.input :number, placeholder: '...', label: false, disabled: true, class: 'form-control', input_html: {  id: 'numero' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Bairro</label>
+            <%= f.input :neighborhood, placeholder: '...', label: false, disabled: true, class: 'form-control', input_html: {  id: 'bairro' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Cidade</label>
+            <%= f.input :city, placeholder: '...', label: false, disabled: true, class: 'form-control', input_html: {  id: 'cidade' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Estado</label>
+            <%= f.input :state, placeholder: '...', label: false, disabled: true, class: 'form-control', input_html: {  id: 'uf' } %>
+          </div>
+          </div>
+            
+          </div>
+          
+          <div class="box-footer">
+            <%= f.button :submit, :class => 'btn-primary' %>
+            <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 customers_path, :class => 'btn btn-default' %>
+          </div>
+        
+        
+      </form>
+    </div>
+  </div>
+</div>
 <% end %>
+
+
+
+
+ 
+
+  
+

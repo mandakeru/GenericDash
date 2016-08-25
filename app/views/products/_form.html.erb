@@ -1,16 +1,54 @@
-<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name %>
-  <%#= error_span(@product[:name]) %>
-  <%= f.input :description %>
-  <%#= error_span(@product[:description]) %>
-  <%= f.input :category %>
-  <%#= error_span(@product[:category]) %>
-  <%= f.input :price %>
-  <%#= error_span(@product[:price]) %>
-  <%= f.input :quantity %>
-  <%#= error_span(@product[:quantity]) %>
-
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+<%= simple_form_for @product do |f| %>
+<div class="row">
+  <div class="col-md-10">
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de Produtos</h3>
+      </div>
+      
+      <form role="form">
+        <div class="box-body">
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Nome</label>
+            <%= f.input :name, placeholder: 'Insira o nome', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Descrição</label>
+            <%= f.input :description, placeholder: 'Insira uma descrição', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Categoria</label>
+            <%= f.input :category, placeholder: 'Selecione', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Preço</label>
+            <%= f.input :price, placeholder: 'Insira o preço', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Quantidade</label>
+            <%= f.input :quantity, placeholder: 'Insira a quantidade', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+        </div>
+        <div class="box-footer">
+          <%= f.button :submit, :class => 'btn-primary' %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 products_path, :class => 'btn btn-default' %>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  
+  
 <% end %>
