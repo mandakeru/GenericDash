@@ -1,20 +1,73 @@
-<%= simple_form_for @transaction, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :title %>
-  <%#= error_span(@transaction[:title]) %>
-  <%= f.input :description %>
-  <%#= error_span(@transaction[:description]) %>
-  <%= f.input :category %>
-  <%#= error_span(@transaction[:category]) %>
-  <%= f.input :customer_id %>
-  <%#= error_span(@transaction[:customer_id]) %>
-  <%= f.input :product_id %>
-  <%#= error_span(@transaction[:product_id]) %>
-  <%= f.input :total_price %>
-  <%#= error_span(@transaction[:total_price]) %>
-  <%= f.input :price %>
-  <%#= error_span(@transaction[:price]) %>
-
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+ <%= simple_form_for @transaction do |f| %>
+<div class="row">
+  <div class="col-md-10">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Nova Transação</h3>
+      </div>
+      
+      <form role="form">
+       
+        <div class="box-body">
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="title">Título</label>
+            <%= f.input :title, placeholder: 'Breve descrição..', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+            <label for="description">Descrição</label>
+            <%= f.input :description, placeholder: 'Descrição completa', label: false, input_html: { class: 'form-control' } %>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label for="category">Categoria</label>
+              <%= f.input :category, placeholder: 'Selecione', label: false, input_html: { class: 'form-control' } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label for="category">Nome do Cliente</label>
+              <%= f.association :customer, placeholder: 'Selecione', label: false, input_html: { class: 'form-control' } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label for="category">Produtos</label>
+              <%= f.association :product, placeholder: 'Selecione', label: false, input_html: { class: 'form-control' } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label for="category">Preço total</label>
+              <%= f.input :total_price, placeholder: 'Insira o preço', label: false, input_html: { class: 'form-control' } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label for="category">Preço</label>
+              <%= f.input :price, placeholder: 'Insira o preço', label: false, input_html: { class: 'form-control' } %>
+            </div>
+          </div>
+        </div>
+        <div class="box-footer">
+           <%= f.button :submit, :class => 'btn-primary' %>
+              <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 transactions_path, :class => 'btn btn-default' %>
-<% end %>
+        </div>
+        <% end %>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+  
+  <%#= error_span(@transaction[:title]) %>
+  
+  <%#= error_span(@transaction[:description]) %>
+ 
+
