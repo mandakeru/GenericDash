@@ -41,6 +41,12 @@
           </div>
           <div class="row">
             <div class="form-group col-sm-6">
+              <label for="category">Quantidade</label>
+              <%= f.input :product_quantity, placeholder: 'Quantidade', label: false, input_html: { class: 'form-control' } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-6">
               <label for="category">Preço total</label>
               <%= f.input :total_price, placeholder: 'Insira o preço', label: false, input_html: { class: 'form-control' } %>
             </div>

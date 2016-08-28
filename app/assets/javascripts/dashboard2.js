@@ -1,6 +1,23 @@
 $(function () {
 
   'use strict';
+  
+  
+  new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'vendas_graf',
+  data: $('#vendas_graf').data('vendas'),
+  // The name of the data record attribute that contains x-values.
+  xkey: 'created_at',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['total_price'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Price']
+});
+  
+  
+  
 
   /* ChartJS
    * -------
@@ -27,7 +44,7 @@ $(function () {
         pointStrokeColor: "#c1c7d1",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgb(220,220,220)",
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: [0, 2, 80, 81, 56, 55, 40]
       },
       {
         label: "Digital Goods",

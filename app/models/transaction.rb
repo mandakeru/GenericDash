@@ -2,16 +2,17 @@
 #
 # Table name: transactions
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :text
-#  category    :integer
-#  customer_id :integer
-#  product_id  :integer
-#  total_price :decimal(, )
-#  price       :decimal(, )
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id               :integer          not null, primary key
+#  title            :string
+#  description      :text
+#  category         :integer
+#  customer_id      :integer
+#  product_id       :integer
+#  total_price      :decimal(, )
+#  price            :decimal(, )
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  product_quantity :integer
 #
 # Indexes
 #

@@ -17,6 +17,7 @@
  *= jquery-jvectormap-1.2.2
  *= ionicons.min
  *= twitter-bootstrap-rails
+ *= morris
  *= require_tree .
  *= require_self
  */

@@ -24,17 +24,21 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    @transaction = Transaction.new(transaction_params)
-
-    respond_to do |format|
-      if @transaction.save
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @transaction }
-      else
-        format.html { render :new }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
-      end
-    end
+   # binding.pry
+  @transaction = Transaction.new(transaction_params)
+  @produto = @transaction.product
+  @quantidade = @transaction.product_quantity
+  respond_to do |format|
+   if @transaction.save
+     estoque = @produto.quantity - @quantidade
+      @produto.update(:quantity => estoque)
+     format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
+     format.json { render :show, status: :created, location: @transaction }
+     else
+      format.html { render :new }
+      format.json { render json: @transaction.errors, status: :unprocessable_entity }
+     end
+   end
   end
 
   # PATCH/PUT /transactions/1
@@ -69,6 +73,7 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:title, :description, :category, :customer_id, :product_id, :total_price, :price)
+      params.require(:transaction).permit(:title, :description, :category, :customer_id, :product_id, :total_price, :price,
+      :product_quantity)
     end
 end
