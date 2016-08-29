@@ -1,8 +1,25 @@
 $(function () {
 
   'use strict';
-
+  
   /* ChartJS
+  new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'vendas_graf',
+  data: $('#vendas_graf').data('vendas'),
+  // The name of the data record attribute that contains x-values.
+  xkey: 'created_at',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['total_price'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Price']
+});
+  
+  
+  
+
+  
    * -------
    * Here we will create a few charts using ChartJS
    */
@@ -11,23 +28,26 @@ $(function () {
   //- MONTHLY SALES CHART -
   //-----------------------
 
+
+  
+
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
   // This will get the first returned node in the jQuery collection.
   var salesChart = new Chart(salesChartCanvas);
 
   var salesChartData = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
     datasets: [
       {
         label: "Electronics",
-        fillColor: "rgb(210, 214, 222)",
-        strokeColor: "rgb(210, 214, 222)",
-        pointColor: "rgb(210, 214, 222)",
+        fillColor: "rgb(204, 0, 0)",
+        strokeColor: "rgb(204, 0, 0)",
+        pointColor: "rgb(204, 0, 0)",
         pointStrokeColor: "#c1c7d1",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgb(220,220,220)",
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: $('#salesChart').data('despesas')
       },
       {
         label: "Digital Goods",
@@ -37,7 +57,7 @@ $(function () {
         pointStrokeColor: "rgba(60,141,188,1)",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(60,141,188,1)",
-        data: [28, 48, 40, 19, 86, 27, 90]
+        data: $('#salesChart').data('vendas')
       }
     ]
   };

@@ -1,33 +1,38 @@
 
+
+
+
+
+
 <!-- Main content -->
     <section class="content">
       <!-- Info boxes -->
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion "></i></span>
+            <span class="info-box-icon bg-red"><i class="fa fa-cubes"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text"><%#= link_to 'Recursos', resources_path %></span>
-              <span class="info-box-number"><%#= @recursos %></span>
+              <span class="info-box-text">Produtos</span>
+              <span class="info-box-number"><%= @products %></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-cart-arrow-down "></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Despesas</span>
+              <span class="info-box-number"><%= @compras %></span>
             </div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text"><%#= link_to 'Projetos', projects_path %></span>
-              <span class="info-box-number"><%#= @project_total %></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
         <!-- /.col -->
 
         <!-- fix for small devices only -->
@@ -35,11 +40,12 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion "></i></span>
+            
+            <span class="info-box-icon bg-green"><i class="fa fa-money "></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Sales</span>
-              <span class="info-box-number">760</span>
+              <span class="info-box-text">Vendas</span>
+              <span class="info-box-number"><%= @vendas %></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -48,11 +54,11 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+            <span class="info-box-icon bg-yellow"><i class="fa fa-group"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">New Members</span>
-              <span class="info-box-number">2,000</span>
+              <span class="info-box-text">Novos Clientes</span>
+              <span class="info-box-number"><%= @customers %></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -61,12 +67,17 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
+      
+      
+      
+      
+      
 
       <div class="row">
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Monthly Recap Report</h3>
+              <h3 class="box-title">Relatório das vendas</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -90,32 +101,35 @@
               <div class="row">
                 <div class="col-md-8">
                   <p class="text-center">
-                    <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                    <strong>Vendas de 1 Jan a 30 de Jul - 2016</strong>
                   </p>
 
                   <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
+                    <!-- Sales Chart Canvas>
+                    <canvas id="salesChart" style="height: 180px;"></canvas -->
+                    <div style="width: 694px; height: 347px;">
+                      <%= content_tag :canvas, "", id: "salesChart", data: {vendas: @months, despesas: @desp_months} %>
+                    </div>
                   </div>
                   <!-- /.chart-responsive -->
                 </div>
                 <!-- /.col -->
                 <div class="col-md-4">
                   <p class="text-center">
-                    <strong>Goal Completion</strong>
+                    <strong>Alcance das metas</strong>
                   </p>
 
                   <div class="progress-group">
-                    <span class="progress-text">Add Products to Cart</span>
-                    <span class="progress-number"><b>160</b>/200</span>
+                    <span class="progress-text">Produtos vendidos</span>
+                    <span class="progress-number"><b><%= @vendas %></b>/200</span>
 
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: <%= @vendas %>%;"></div>
                     </div>
                   </div>
                   <!-- /.progress-group -->
                   <div class="progress-group">
-                    <span class="progress-text">Complete Purchase</span>
+                    <span class="progress-text">Novos clientes</span>
                     <span class="progress-number"><b>310</b>/400</span>
 
                     <div class="progress sm">
@@ -124,7 +138,7 @@
                   </div>
                   <!-- /.progress-group -->
                   <div class="progress-group">
-                    <span class="progress-text">Visit Premium Page</span>
+                    <span class="progress-text">Clientes que voltaram</span>
                     <span class="progress-number"><b>480</b>/800</span>
 
                     <div class="progress sm">
@@ -132,14 +146,7 @@
                     </div>
                   </div>
                   <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Send Inquiries</span>
-                    <span class="progress-number"><b>250</b>/500</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                    </div>
-                  </div>
+                
                   <!-- /.progress-group -->
                 </div>
                 <!-- /.col -->
@@ -152,17 +159,17 @@
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
                     <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                    <h5 class="description-header">$35,210.43</h5>
-                    <span class="description-text">TOTAL REVENUE</span>
+                    <h5 class="description-header">R$<%= @total_vendas %></h5>
+                    <span class="description-text">TOTAL VENDAS</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
-                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                    <h5 class="description-header">$10,390.90</h5>
-                    <span class="description-text">TOTAL COST</span>
+                    <span class="description-percentage text-blue"><i class="fa fa-caret-left"></i> 0%</span>
+                    <h5 class="description-header">$<%= @total_gastos %></h5>
+                    <span class="description-text">TOTAL GASTOS</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -193,4 +200,29 @@
         </div>
         <!-- /.col -->
       </div>
+      
+      
+      <script>
+//        
+//        new Morris.Line({
+//  // ID of the element in which to draw the chart.
+//  element: 'myfirstchart',
+//  // Chart data records -- each entry in this array corresponds to a point on
+//  // the chart.
+//  data: [
+//    { year: '2008', value: 20 },
+//    { year: '2009', value: 10 },
+//    { year: '2010', value: 5 },
+//    { year: '2011', value: 5 },
+//    { year: '2012', value: 20 }
+//  ],
+//  // The name of the data record attribute that contains x-values.
+//  xkey: 'year',
+//  // A list of names of data record attributes that contain y-values.
+//  ykeys: ['value'],
+//  // Labels for the ykeys -- will be displayed when you hover over the
+//  // chart.
+//  labels: ['Value']
+//});
+      </script>
       
