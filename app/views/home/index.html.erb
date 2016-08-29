@@ -105,11 +105,11 @@
                   </p>
 
                   <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
-                    <!--div style="height: 180px;">
-                      <%#= content_tag :div, "", id: "vendas_graf", data: {vendas: @vendas_graf} %>
-                    </div-->
+                    <!-- Sales Chart Canvas>
+                    <canvas id="salesChart" style="height: 180px;"></canvas -->
+                    <div style="width: 694px; height: 347px;">
+                      <%= content_tag :canvas, "", id: "salesChart", data: {vendas: @months, despesas: @desp_months} %>
+                    </div>
                   </div>
                   <!-- /.chart-responsive -->
                 </div>

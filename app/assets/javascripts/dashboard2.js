@@ -28,6 +28,9 @@ $(function () {
   //- MONTHLY SALES CHART -
   //-----------------------
 
+
+  
+
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
   // This will get the first returned node in the jQuery collection.
@@ -38,13 +41,13 @@ $(function () {
     datasets: [
       {
         label: "Electronics",
-        fillColor: "rgb(210, 214, 222)",
-        strokeColor: "rgb(210, 214, 222)",
-        pointColor: "rgb(210, 214, 222)",
+        fillColor: "rgb(204, 0, 0)",
+        strokeColor: "rgb(204, 0, 0)",
+        pointColor: "rgb(204, 0, 0)",
         pointStrokeColor: "#c1c7d1",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgb(220,220,220)",
-        data: [0, 2, 80, 81, 56, 55, 40, 12, 8, 1]
+        data: $('#salesChart').data('despesas')
       },
       {
         label: "Digital Goods",
@@ -54,7 +57,7 @@ $(function () {
         pointStrokeColor: "rgba(60,141,188,1)",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(60,141,188,1)",
-        data: [28, 48, 40, 19, 86, 27, 90, 15, 2]
+        data: $('#salesChart').data('vendas')
       }
     ]
   };
