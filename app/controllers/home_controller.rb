@@ -10,6 +10,8 @@ class HomeController < ApplicationController
     
     @total_vendas = "%.2f" % Transaction.where(category: 2).sum(:total_price)
     @total_gastos = "%.2f" % Transaction.where(category: 1).sum(:total_price)
+    
+    
    
    render_data_sells
    render_data_gastos

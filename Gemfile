@@ -20,6 +20,7 @@ gem 'annotate'
 gem 'enumerize'
 gem 'devise'
 gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 
 # pack Gems Dashborad
 gem "twitter-bootstrap-rails"
