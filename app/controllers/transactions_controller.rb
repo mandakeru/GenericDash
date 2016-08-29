@@ -24,12 +24,12 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-   # binding.pry
   @transaction = Transaction.new(transaction_params)
   @produto = @transaction.product
   @quantidade = @transaction.product_quantity
   respond_to do |format|
    if @transaction.save
+     @transaction.month = Time.now.month
      estoque = @produto.quantity - @quantidade
       @produto.update(:quantity => estoque)
      format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
@@ -74,6 +74,8 @@ class TransactionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
       params.require(:transaction).permit(:title, :description, :category, :customer_id, :product_id, :total_price, :price,
-      :product_quantity)
+      :product_quantity, :month)
     end
+    
+    
 end

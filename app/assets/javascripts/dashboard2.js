@@ -2,7 +2,7 @@ $(function () {
 
   'use strict';
   
-  
+  /* ChartJS
   new Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'vendas_graf',
@@ -19,7 +19,7 @@ $(function () {
   
   
 
-  /* ChartJS
+  
    * -------
    * Here we will create a few charts using ChartJS
    */
@@ -34,7 +34,7 @@ $(function () {
   var salesChart = new Chart(salesChartCanvas);
 
   var salesChartData = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
     datasets: [
       {
         label: "Electronics",
@@ -44,7 +44,7 @@ $(function () {
         pointStrokeColor: "#c1c7d1",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgb(220,220,220)",
-        data: [0, 2, 80, 81, 56, 55, 40]
+        data: [0, 2, 80, 81, 56, 55, 40, 12, 8, 1]
       },
       {
         label: "Digital Goods",
@@ -54,7 +54,7 @@ $(function () {
         pointStrokeColor: "rgba(60,141,188,1)",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(60,141,188,1)",
-        data: [28, 48, 40, 19, 86, 27, 90]
+        data: [28, 48, 40, 19, 86, 27, 90, 15, 2]
       }
     ]
   };

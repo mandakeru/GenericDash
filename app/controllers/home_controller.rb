@@ -16,6 +16,13 @@ class HomeController < ApplicationController
   end
   
   
+  private
+  
+  def render_data_sells
+    
+    @vendas_mes = Transaction.where("category = 2 AND created_at")
+  end
+  
   
   
   
