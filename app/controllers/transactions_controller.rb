@@ -27,6 +27,7 @@ class TransactionsController < ApplicationController
   @transaction = Transaction.new(transaction_params)
   @produto = @transaction.product
   @quantidade = @transaction.product_quantity
+  @transaction.month = Time.now.month
   respond_to do |format|
    if @transaction.save
      @transaction.month = Time.now.month
