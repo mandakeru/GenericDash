@@ -6,6 +6,7 @@ class TransactionsController < ApplicationController
   def index
     @transactions = Transaction.all
     respond_to do |format|
+      format.html
       format.csv 
       format.xls { send_data text: @transactions.to_csv(col_sep: "\t") }
     end
