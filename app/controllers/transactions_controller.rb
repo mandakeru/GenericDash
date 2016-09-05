@@ -5,6 +5,11 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     @transactions = Transaction.all
+    respond_to do |format|
+      format.html
+      format.csv 
+      format.xls { send_data text: @transactions.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /transactions/1

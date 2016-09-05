@@ -32,5 +32,4 @@ class Customer < ActiveRecord::Base
   validates :name, :cpf, presence: true
   validates :phone1, :phone2, length: { is: 12 }
   
-  
 end

@@ -20,6 +20,10 @@ gem 'annotate'
 gem 'enumerize'
 gem 'devise'
 gem 'pg', group: :production
+gem 'rails_12factor', group: :production
+
+gem 'validates_cpf_cnpj'
+gem 'simple-form-datepicker'
 
 # pack Gems Dashborad
 gem "twitter-bootstrap-rails"
@@ -32,6 +36,7 @@ gem 'fastclick-rails'
 gem 'puma'
 
 gem 'jasny-bootstrap-rails'
+gem 'jquery-ui-rails'
 
 
 

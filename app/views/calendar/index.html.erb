@@ -1,0 +1,35 @@
+
+<div class="col-md-9">
+    <div class="box box-primary">
+        <div class="box-body no-padding">
+            <div id="calendar" class="fc fc-ltr fc-unthemed">
+                <div class="fc-toolbar">
+                    <div class="fc-left">
+                        <div class="fc-button-group">
+                            <button class="fc-prev-button fc-button fc-state-default fc-corner-left">
+                                <span class="fc-icon fc-icon-left-single-arrow"></span>
+                            </button>
+                            <button class="fc-next-button fc-button fc-state-default fc-corner-right">
+                                <span class="fc-icon fc-icon-right-single-arrow"></span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="fc-center">
+                        <h2><%= Time.now.month %></h2>
+                    </div>
+                </div>
+                
+                <div class="fc-view-container">
+                    <div class="fc-view fc-month-view fc-basic-view">
+                        <%= calendar do |date| %>
+                            <%= date.day %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  

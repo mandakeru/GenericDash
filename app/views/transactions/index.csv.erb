@@ -1,0 +1,22 @@
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>title</th>
+        <th>description</th>
+        <th>category</th>
+        <th>customer_id</th>
+        <th>product_id</th>
+        <th>total_price</th>
+    </tr>
+    <%= @transactions.each do |trans| %>
+    <tr>
+        <td><%= trans.id %></td>
+        <td><%= trans.title %></td>
+        <td><%= trans.description %></td>
+        <td><%= trans.category %></td>
+        <td><%= trans.customer_id %></td>
+        <td><%= trans.product_id %></td>
+        <td><%= trans.total_price %></td>
+    </tr>
+    <% end %>
+</table>

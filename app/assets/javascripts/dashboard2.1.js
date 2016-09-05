@@ -33,10 +33,9 @@ $("#customer_cpf").mask("999.999.999-99");
 $("#customer_phone1").mask("(99)9999-9999"); 
 $("#customer_phone2").mask("(99)9999-9999"); 
 $("#customer_zip_code").mask("99999-999");
-
-  //datepicker
-$("#customer_birthdate").datepicker();
   
+  
+
 
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
