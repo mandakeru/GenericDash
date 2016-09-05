@@ -22,6 +22,9 @@ gem 'devise'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
+gem 'validates_cpf_cnpj'
+gem 'simple-form-datepicker'
+
 # pack Gems Dashborad
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -33,6 +36,7 @@ gem 'fastclick-rails'
 gem 'puma'
 
 gem 'jasny-bootstrap-rails'
+gem 'jquery-ui-rails'
 
 
 

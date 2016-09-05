@@ -30,8 +30,7 @@
           <div class="row">
             <div class="form-group col-sm-6">
             <label for="title">Data de nascimento</label>
-            <%= f.input :birthdate, as: :date, start_year: Date.today.year - 16,
-            end_year: Date.today.year, order: [:day, :month, :year], label: false, input_html: { class: 'form-control' } %>
+            <%= f.input :birthdate, :as => :datepicker, label: false, input_html: { class: 'form-control' } %>
           </div>
           </div>
           <div class="row">
