@@ -176,8 +176,14 @@
                 <!-- /.col -->
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                    <h5 class="description-header"><%= @total_lucro %></h5>
+                    <% if @porcentagem.to_i < 0 %>
+                    <span class="description-percentage text-red"><%= @porcentagem %>%<i class="fa fa-caret-down"></i></span>
+                    
+                    <% else %>
+                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i><%= @porcentagem %>%</span>
+                    <% end %>
+                    
+                    <h5 class="description-header"><%= @lucro %></h5>
                     <span class="description-text">TOTAL LUCRO</span>
                   </div>
                   <!-- /.description-block -->

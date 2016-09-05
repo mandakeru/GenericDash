@@ -15,6 +15,8 @@ class HomeController < ApplicationController
    
    render_data_sells
    render_data_gastos
+   porcentagem
+   
    
     
   end
@@ -61,6 +63,18 @@ class HomeController < ApplicationController
    @vendas_mes_Dez = Transaction.where("category = 1 AND month = '12'").count
   ]
     
+  end
+  
+  def porcentagem
+   total_vendas = "%.2f" % Transaction.where(category: 2).sum(:total_price)
+   total_gastos = "%.2f" % Transaction.where(category: 1).sum(:total_price)
+   
+   
+   @lucro = ("%.2f" % (total_vendas.to_f - total_gastos.to_f)).to_f
+   
+   @porcentagem = "%.1f" % (@lucro * 100  / total_vendas.to_f)
+   
+   
   end
   
   
