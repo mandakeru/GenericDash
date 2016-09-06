@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
 
   'use strict';
   
@@ -305,10 +305,10 @@ $("#customer_birthdate").datepicker();
   function limpa_formulário_cep() {
                 // Limpa valores do formulário de cep.
                 $("#customer_street").val("");
-                $("#bairro").val("");
-                $("#cidade").val("");
-                $("#uf").val("");
-                $("#ibge").val("");
+                $("#customer_neighborhood").val("");
+                $("#customer_city").val("");
+                $("#customer_state").val("");
+                $("#customer_number").val("");
             }
             
             //Quando o campo cep perde o foco.
@@ -330,21 +330,21 @@ $("#customer_birthdate").datepicker();
                         alert('Consultando');
                         //$("#endereco").show(200);
                         $("#customer_street").val("...")
-                        $("#bairro").val("...")
-                        $("#cidade").val("...")
-                        $("#uf").val("...")
-                        $("#ibge").val("...")
+                        $("#customer_neighborhood").val("...")
+                        $("#customer_city").val("...")
+                        $("#customer_state").val("...")
+                        $("#customer_number").val("...")
 
                         //Consulta o webservice viacep.com.br/
                         $.getJSON("//viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
 
                             if (!("erro" in dados)) {
                                 //Atualiza os campos com os valores da consulta.
-                                $("#rua").val(dados.logradouro);
-                                $("#bairro").val(dados.bairro);
-                                $("#cidade").val(dados.localidade);
-                                $("#uf").val(dados.uf);
-                                $("#ibge").val(dados.ibge);
+                                $("#customer_street").val(dados.logradouro);
+                                $("#customer_neighborhood").val(dados.bairro);
+                                $("#customer_city").val(dados.localidade);
+                                $("#customer_state").val(dados.uf);
+                                //$("#customer_number").val(dados.ibge);
                                 
                               // var address
                             } //end if.

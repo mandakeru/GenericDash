@@ -17,7 +17,6 @@
 //= require demo
 //= require findCep
 //= require jasny-bootstrap.min.js
-//= require mask
 //= require morris
 //= require raphael.min
 //= require_tree .
